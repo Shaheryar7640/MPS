@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Filters View Controller-->
+        <scene sceneID="wj9-b2-6Q8">
+            <objects>
+                <viewController storyboardIdentifier="ImageFiltersViewController" id="yNj-G0-2LL" customClass="ImageFiltersViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8v-Hc-GEB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6r-UB-Tb4">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImg" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-kR-E9r">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="656"/>
+                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A9I-b5-K9E">
+                                        <rect key="frame" x="0.0" y="700" width="414" height="114"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z0A-Hi-Lga">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sma-J5-kEW">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WI2-AG-CoO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="yNj-G0-2LL" id="P5x-LY-sgp"/>
+                                            <outlet property="delegate" destination="yNj-G0-2LL" id="jtu-fO-uLe"/>
+                                        </connections>
+                                    </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6mf-gP-yCP">
+                                        <rect key="frame" x="16" y="664" width="382" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us5-rJ-xUV">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Us5-rJ-xUV" secondAttribute="height" multiplier="1:1" id="XwE-Ya-La5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                                    <imageReference key="image" image="target" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapFilterCollectionButton:" destination="yNj-G0-2LL" eventType="touchUpInside" id="3xd-1c-CrE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRB-D8-dj9">
+                                                <rect key="frame" x="86.5" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pRB-D8-dj9" secondAttribute="height" multiplier="1:1" id="StU-gE-aHU"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                                    <imageReference key="image" image="target" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapFilterCollectionButton:" destination="yNj-G0-2LL" eventType="touchUpInside" id="v25-Jy-Xdd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-SB-Zev">
+                                                <rect key="frame" x="173" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7Cn-SB-Zev" secondAttribute="height" multiplier="1:1" id="ytE-kE-QGf"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                                    <imageReference key="image" image="target" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapFilterCollectionButton:" destination="yNj-G0-2LL" eventType="touchUpInside" id="1OF-Sg-QmJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-Ie-zTT">
+                                                <rect key="frame" x="259.5" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="JMO-Ie-zTT" secondAttribute="height" multiplier="1:1" id="fyW-AZ-nWw"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                                    <imageReference key="image" image="target" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapFilterCollectionButton:" destination="yNj-G0-2LL" eventType="touchUpInside" id="2Hd-DM-q5E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5q-SL-caa">
+                                                <rect key="frame" x="346" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="T5q-SL-caa" secondAttribute="height" multiplier="1:1" id="H4T-HU-mhI"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                                    <imageReference key="image" image="target" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapFilterCollectionButton:" destination="yNj-G0-2LL" eventType="touchUpInside" id="X0M-L2-xzb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="jed-rh-vBg"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="A9I-b5-K9E" firstAttribute="height" secondItem="N6r-UB-Tb4" secondAttribute="height" multiplier="0.14" id="7NU-i1-kn2"/>
+                                    <constraint firstItem="A9I-b5-K9E" firstAttribute="top" secondItem="6mf-gP-yCP" secondAttribute="bottom" id="Gr1-tQ-k2u"/>
+                                    <constraint firstAttribute="trailing" secondItem="A9I-b5-K9E" secondAttribute="trailing" id="Lge-os-B2c"/>
+                                    <constraint firstItem="A9I-b5-K9E" firstAttribute="leading" secondItem="N6r-UB-Tb4" secondAttribute="leading" id="TLx-2c-pYt"/>
+                                    <constraint firstItem="Isr-kR-E9r" firstAttribute="top" secondItem="N6r-UB-Tb4" secondAttribute="top" id="TNX-Wn-kk4"/>
+                                    <constraint firstItem="6mf-gP-yCP" firstAttribute="top" secondItem="Isr-kR-E9r" secondAttribute="bottom" constant="8" id="TjQ-IP-Gxy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Isr-kR-E9r" secondAttribute="trailing" id="Y99-at-MFq"/>
+                                    <constraint firstItem="Isr-kR-E9r" firstAttribute="leading" secondItem="N6r-UB-Tb4" secondAttribute="leading" id="d4F-K6-76G"/>
+                                    <constraint firstAttribute="trailing" secondItem="6mf-gP-yCP" secondAttribute="trailing" constant="16" id="eM1-Vp-iWO"/>
+                                    <constraint firstAttribute="bottom" secondItem="A9I-b5-K9E" secondAttribute="bottom" id="h4U-ee-dMh"/>
+                                    <constraint firstItem="6mf-gP-yCP" firstAttribute="leading" secondItem="N6r-UB-Tb4" secondAttribute="leading" constant="16" id="tEe-GA-lXk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XcF-7s-VQe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XcF-7s-VQe" firstAttribute="trailing" secondItem="N6r-UB-Tb4" secondAttribute="trailing" id="GMm-7H-jGp"/>
+                            <constraint firstItem="N6r-UB-Tb4" firstAttribute="top" secondItem="XcF-7s-VQe" secondAttribute="top" id="iJT-ig-Bab"/>
+                            <constraint firstItem="N6r-UB-Tb4" firstAttribute="leading" secondItem="XcF-7s-VQe" secondAttribute="leading" id="wHX-CF-gly"/>
+                            <constraint firstItem="XcF-7s-VQe" firstAttribute="bottom" secondItem="N6r-UB-Tb4" secondAttribute="bottom" id="yaF-U2-dIy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filtersCollectionView" destination="A9I-b5-K9E" id="SbW-ax-0WI"/>
+                        <outlet property="imageView" destination="Isr-kR-E9r" id="7Ip-Cl-ED5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KHl-lC-3nE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="158.70535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="target" catalog="system" width="128" height="123"/>
+        <image name="testImg" width="1005.5" height="1211.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
